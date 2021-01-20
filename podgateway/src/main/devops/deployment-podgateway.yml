@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-podgateway
+  labels:
+    deploy: experimental
+    category: networkPolicies
+spec:
+  selector:
+    matchLabels:
+      app: podgateway
+      type: experimental-network
+  template:
+    metadata:
+      name: eureka-main-svc
+      labels:
+        app: podgateway
+        type: experimental-network
+    spec:
+      containers:
+        - name: gateway-container
+          image: podgateway:v1
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: IDS_SVC_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap-podgateway
+                  key: IDS_SVC_HOST
+  replicas: 1
+  strategy:
+    type: RollingUpdate

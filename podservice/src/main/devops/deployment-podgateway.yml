@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-podservice
+  labels:
+    deploy: experimental
+    category: networkPolicies
+spec:
+  selector:
+    matchLabels:
+      app: podservice
+      type: experimental-network
+  template:
+    metadata:
+      name: eureka-main-svc
+      labels:
+        app: podservice
+        type: experimental-network
+    spec:
+      containers:
+        - name: service-container
+          image: podservice:v1
+          imagePullPolicy: IfNotPresent
+  replicas: 1
+  strategy:
+    type: RollingUpdate

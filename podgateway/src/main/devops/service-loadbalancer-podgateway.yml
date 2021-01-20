@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: podgateway-service
+  labels:
+    service: experimental
+    category: networkPolicies
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: 8080
+      port: 8081
+  selector:
+    app: podgateway
+    type: experimental-network

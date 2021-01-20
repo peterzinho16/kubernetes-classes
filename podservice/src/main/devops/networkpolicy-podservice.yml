@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: networkpolicy-podservice
+  labels:
+    networkpolicy: experimental
+    category: networkpolicy
+spec:
+  podSelector:
+    matchLabels:
+      app: podservice
+      type: experimental-network
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: podwhatever
+              type: experimental-network
+      ports:
+        - port: 9080
+          protocol: TCP
