@@ -7,4 +7,4 @@ metadata:
     configMap: experimental
     category: networkPolicies
 data:
-  IDS_SVC_HOST: dft-port.TCP.podservice-service.default.svc.cluster.local
+  IDS_SVC_HOST: dft-port.TCP.podservice-service.ingress-nginx.svc.cluster.local
