@@ -5,6 +5,7 @@ metadata:
   labels:
     networkpolicy: experimental
     category: networkpolicy
+  namespace: ingress-nginx
 spec:
   podSelector:
     matchLabels:
