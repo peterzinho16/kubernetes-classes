@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: rewrite
+  namespace: default
+spec:
+  rules:
+    - host: hogarep.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: echo1
+                port:
+                  number: 80
+            path: /echo-service(/|$)(.*)
+            pathType: Prefix
+    - host: hogarep.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: podservice-service
+                port:
+                  number: 80
+            path: /something(/|$)(.*)
+            pathType: Prefix

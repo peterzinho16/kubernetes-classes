@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deploy-podgateway
+  name: deploy-poddummy
   labels:
     deploy: experimental
     category: networkPolicies
 spec:
   selector:
     matchLabels:
-      app: podgateway
+      app: poddummy
       type: experimental-network
   template:
     metadata:
       name: eureka-main-svc
       labels:
-        app: podgateway
+        app: poddummy
         type: experimental-network
     spec:
       containers:

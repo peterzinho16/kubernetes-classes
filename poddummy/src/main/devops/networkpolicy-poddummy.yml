@@ -1,25 +1,23 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: networkpolicy-podservice
+  name: networkpolicy-poddummy
   labels:
     networkpolicy: experimental
     category: networkpolicy
 spec:
   podSelector:
     matchLabels:
-      app: podservice
+      app: poddummy
       type: experimental-network
-  ingress:
-    - from:
+  egress:
+    - to:
         - podSelector:
             matchLabels:
-              app: podgatewayzz
-              type: experimental-network
-        - podSelector:
-            matchLabels:
-              app: poddummyzz
+              app: podservice
               type: experimental-network
       ports:
-        - port: 9080
+        - port: 80
           protocol: TCP
+  policyTypes:
+  - Egress

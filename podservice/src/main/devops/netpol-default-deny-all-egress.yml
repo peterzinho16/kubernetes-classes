@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: netpol-egress-dummy
+spec:
+  podSelector:
+    matchLabels:
+      app: poddummy
+      type: experimental-network
+  egress:
+    - to:
+        - podSelector:
+            matchLabels:
+              app: podservice
+              type: experimental-network
+      ports:
+        - port: 53
+          protocol: TCP
+        - port: 53
+          protocol: UDP
+        - port: 9080
+          protocol: TCP
+  policyTypes:
+  - Egress

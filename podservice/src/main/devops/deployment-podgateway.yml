@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: service-container
-          image: podservice:v1
+          image: peterzinho16/podservice:v2
           imagePullPolicy: IfNotPresent
   replicas: 1
   strategy:
