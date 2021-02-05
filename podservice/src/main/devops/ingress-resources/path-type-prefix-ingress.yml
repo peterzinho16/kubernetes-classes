@@ -8,9 +8,11 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
 spec:
   tls:
-  - hosts:
-      - hogarep.com
-    secretName: example-app-tls
+    - hosts:
+        - hogarep.com
+        - www.hogarep.com
+        - es.hogarep.com
+      secretName: example-app-tls
   rules:
     - host: es.hogarep.com
       http:
