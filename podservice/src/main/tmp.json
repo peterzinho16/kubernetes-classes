@@ -1,0 +1,55 @@
+[
+  .
+  .
+  .,
+  {
+    "resource-uri":"/channel/ciam/v1/mobile-card-pin-management/card-pin-management",
+    "httpMethod":"POST",
+    "endpoint-content":{
+      "interceptUrlMap":[
+        .
+        .
+        .,
+        {
+          "pattern": "/party/customer-profile/v2/person-addresses",
+          "httpMethod": "POST"
+        },
+        {
+          "pattern": "/party/customer-profile/v2/person-addresses*",
+          "httpMethod": "GET"
+        },
+        {
+          "pattern": "/party/customer-profile/v2/person-addresses/update",
+          "httpMethod": "POST"
+        },
+        {
+          "pattern": "/party/customer-profile/v2/third-party-relationships",
+          "httpMethod": "GET"
+        },
+        {
+          "pattern": "/party/customer-profile/v2/third-party-relationships*",
+          "httpMethod": "GET"
+        },
+      ]
+    }
+  },
+  {
+    "resource-uri":"/channel/ciam/mobile-login/v2/identification-methods/card-verification",
+    "httpMethod":"POST",
+    "endpoint-content":{
+      "interceptUrlMap":[
+        .
+        .
+        .,
+        {
+          "pattern": "/party/customer-profile/v2/third-party-relationships",
+          "httpMethod": "GET"
+        },
+        {
+          "pattern": "/party/customer-profile/v2/third-party-relationships*",
+          "httpMethod": "GET"
+        },
+      ]
+    }
+  }
+]

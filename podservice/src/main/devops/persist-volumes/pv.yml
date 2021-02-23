@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: persist-volume-test
+  labels:
+    type: experimental-pv
+    category: persistVolume
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 20Mi
+  hostPath:
+    path: /run/desktop/mnt/host/C/Users/peter/IdeaProjects/kubernetes-apps/podservice/src/main/devops/network-policies/data-pv
+    type: DirectoryOrCreate

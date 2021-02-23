@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: persist-volume-claim-test
+  labels:
+    type: experimental-pvc
+    category: persistVolume
+spec:
+  accessModes:
+    - ReadWriteOnce
+  selector:
+    matchLabels:
+      type: experimental-pvc
+      category: persistVolume
+  resources:
+    requests:
+      storage: 10Mi
+    limits:
+      storage: 20Mi

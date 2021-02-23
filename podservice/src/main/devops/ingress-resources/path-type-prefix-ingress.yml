@@ -12,6 +12,7 @@ spec:
         - hogarep.com
         - www.hogarep.com
         - es.hogarep.com
+        - 159.89.221.157
       secretName: example-app-tls
   rules:
     - host: es.hogarep.com
@@ -45,6 +46,16 @@ spec:
             path: "/"
             pathType: Exact
     - host: www.hogarep.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: podservice-service
+                port:
+                  number: 80
+            path: "/svc/gen/id"
+            pathType: Exact
+    - host: 159.89.221.157
       http:
         paths:
           - backend:

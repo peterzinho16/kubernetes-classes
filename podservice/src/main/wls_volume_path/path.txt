@@ -1,0 +1,3 @@
+\\wsl$\docker-desktop\mnt\\host\${CustomPath}
+example:
+CustomPath=C\Users\your-user\my-volume-directory

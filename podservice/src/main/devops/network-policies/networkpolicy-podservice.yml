@@ -14,12 +14,9 @@ spec:
     - from:
         - podSelector:
             matchLabels:
-              app: podgatewayzz
+              app: podgateway
               type: experimental-network
-        - podSelector:
-            matchLabels:
-              app: poddummyzz
-              type: experimental-network
+          namespaceSelector: {}
       ports:
         - port: 9080
           protocol: TCP
