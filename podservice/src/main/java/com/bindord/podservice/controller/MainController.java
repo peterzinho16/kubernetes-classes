@@ -13,6 +13,11 @@ public class MainController {
 
     @GetMapping("/gen/id")
     public Mono<String> generateId() {
+        String uuid = UUID.randomUUID().toString();
+//        File file = new File("C:\\tmp\\logs\\test\\"+uuid);
+//        boolean result = file.mkdir();
+//        System.out.println("result: " + result);
+
         return Mono.just(UUID.randomUUID().toString());
     }
 }

@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gateway-svc-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: localhost
+      http:
+        paths:
+          - backend:
+              service:
+                name: podgateway-service
+                port:
+                  number: 80
+            path: "/public/get/configmap-value"
+            pathType: Exact
+
+    - host: localhost
+      http:
+        paths:
+          - backend:
+              service:
+                name: svc-echo-hello
+                port:
+                  number: 80
+            path: "/echo/hello"
+            pathType: Exact

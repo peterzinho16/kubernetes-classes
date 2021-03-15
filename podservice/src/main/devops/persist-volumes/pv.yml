@@ -9,7 +9,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   capacity:
-    storage: 20Mi
+    storage: 50Mi
   hostPath:
-    path: /run/desktop/mnt/host/C/Users/peter/IdeaProjects/kubernetes-apps/podservice/src/main/devops/network-policies/data-pv
+    path: /run/desktop/mnt/host/c/kubernetes-apps/data-pv
     type: DirectoryOrCreate

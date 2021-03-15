@@ -18,5 +18,5 @@ spec:
               type: experimental-network
           namespaceSelector: {}
       ports:
-        - port: 9080
+        - port: 9081
           protocol: TCP

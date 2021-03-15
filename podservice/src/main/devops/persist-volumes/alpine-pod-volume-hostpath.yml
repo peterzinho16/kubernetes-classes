@@ -14,5 +14,5 @@ spec:
   volumes:
     - name: data-volume
       hostPath:
-        path: /run/desktop/mnt/host/C/Users/peter/IdeaProjects/kubernetes-apps/podservice/src/main/devops/network-policies/data
+        path: /run/desktop/mnt/host/custom-potter-volume
         type: DirectoryOrCreate
